@@ -6,31 +6,51 @@
 super + ctrl + {b, q}
     bspc {wm -r, quit}
 
-# Reload sxhkd's Config Files
+# Reload SXHKD's Config Files
 super + ctrl + s
     pkill -USR1 -x sxhkd
 
+# View Keybindings
+super + tab
+    sxhkd-help
 
 #
 # BSPWM Window Management
 #
 
-# Set the Window's State
-super + shift + {t, f}
-    bspc node -t {tiled, fullscreen}
+# Rotate Node's Focus
+super + shift + {q, e}
+    bspc node -f {prev, next}.local
 
-# Swap Current Node with the Largest Window
+# Set Window's State
+super + shift + {t, f, r}
+    bspc node -t {tiled, floating, fullscreen}
+
+# Send Window in Given Direction
+super + shift + {w, a, s, d}
+    bspc node -s {north, west, south, east}
+
+# Swap Current Node with Largest Window
 super + shift + l
     bspc node -s biggest.window
 
+# Switch/Send Window to Different Desktop
+super + {_, shift +} {1-9, 0}
+    bspc {desktop -f, node -d} '^{1-9, 10}'
 
+# Resize Window
+super + shift + {left, down, up, right}
+    STEP=50; SELECTION={1,2,3,4}; \
+    bspc node -z $(echo "left -$STEP 0,bottom 0 $STEP,top 0 -$STEP,right $STEP 0" | cut -d',' -f$SELECTION) || \
+    bspc node -z $(echo "right -$STEP 0,top 0 $STEP,bottom 0 -$STEP,left $STEP 0" | cut -d',' -f$SELECTION)
+
+# Move Floating Window
+super + {left, down, up, right}
+    bspc node -v {-20 0, 0 20, 0 -20, 20 0}
 
 # Close/Kill Window (follows clients's closing procedure using ewmh or destroys it using xcb_kill_client)
 super + shift + {q, k}
     bspc node -{c, k}
-
-
-
 
 #
 # Application Launcher
@@ -47,7 +67,3 @@ super + space
 # Firefox
 super + f
     firefox
-
-
-
-
