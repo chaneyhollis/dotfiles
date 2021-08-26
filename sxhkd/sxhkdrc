@@ -1,0 +1,53 @@
+#
+# Enviroment Actions
+#
+
+# Reload/Quit BSPWM
+super + ctrl + {b, q}
+    bspc {wm -r, quit}
+
+# Reload sxhkd's Config Files
+super + ctrl + s
+    pkill -USR1 -x sxhkd
+
+
+#
+# BSPWM Window Management
+#
+
+# Set the Window's State
+super + shift + {t, f}
+    bspc node -t {tiled, fullscreen}
+
+# Swap Current Node with the Largest Window
+super + shift + l
+    bspc node -s biggest.window
+
+
+
+# Close/Kill Window (follows clients's closing procedure using ewmh or destroys it using xcb_kill_client)
+super + shift + {q, k}
+    bspc node -{c, k}
+
+
+
+
+#
+# Application Launcher
+#
+
+# Program Launcher
+super + return
+    rofi -show run
+
+# Terminal Emulator
+super + space
+    kitty
+
+# Firefox
+super + f
+    firefox
+
+
+
+
