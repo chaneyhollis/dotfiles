@@ -34,7 +34,7 @@ modules-center = music
 
 [module/music]
 type = custom/script
-exec = ~/.config/polbar/scripts/player-mpris.sh
+exec = ~/.config/polybar/scripts/player-mpris.sh
 interval = 3
 click-left = playerctl previous &
 click-right = playerctl next &
