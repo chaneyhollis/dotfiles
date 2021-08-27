@@ -1,0 +1,14 @@
+[colors]
+; Pywal XRDB Colors
+background = ${xrdb:color0:#222}
+color1 = ${xrdb:color2}
+color2 = ${xrdb:color4}
+color3 = ${xrdb:color6}
+
+; Other Colors
+white = #FFFFFF
+transparency = #00FFFFFF
+semi_opaque =  #ab000000
+
+[bar/base]
+
