@@ -10,6 +10,10 @@ super + ctrl + {b,q}
 super + ctrl + s
     pkill -USR1 -x sxhkd
 
+# Change Wallpaper 
+super + ctrl + w
+    wal -i ~/Wallpapers
+
 # View Keybindings
 super + ctrl + h
     ~/.config/sxhkd/sxhkd-help
