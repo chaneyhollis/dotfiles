@@ -28,13 +28,13 @@ font-1 = MaterialIcons:size=10
 font-2 = Termsynu:size=8;-1
 font-3 = FontAwesome:size=10
 
-modules-left =
+; modules-left =
 modules-center = music
-modules-right =
+; modules-right =
 
 [module/music]
 type = custom/script
-exec = ~/.config/polbar/scripts/player-mpris-simple.sh
+exec = ~/.config/polbar/scripts/player-mpris.sh
 interval = 3
 click-left = playerctl previous &
 click-right = playerctl next &
