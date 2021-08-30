@@ -19,8 +19,8 @@ foreground = ${colors.foreground}
 padding = 5
 
 modules-left = bspwm
-modules-center = date
-; modules-right =
+; modules-center = date
+modules-right = date
 
 [settings]
 screenchange-reload = true
