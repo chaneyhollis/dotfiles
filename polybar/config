@@ -20,7 +20,7 @@ foreground = ${colors.foreground}
 padding = 5
 
 ; modules-left =
-modules-center = music
+modules-center = date
 ; modules-right =
 
 [settings]
