@@ -18,7 +18,7 @@ background = ${colors.transparent}
 foreground = ${colors.foreground}
 padding = 5
 
-; modules-left =
+modules-left = bspwm
 modules-center = date
 ; modules-right =
 
