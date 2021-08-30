@@ -1,40 +1,27 @@
-[colors]
-; Pywal XRDB Colors
-background = ${xrdb:color0:#222}
-foreground = ${xrdb:color7:#222}
-highlight = ${xrdb:color15:#222}
+include-file = $~/.config/polybar/modules.ini
 
-; Other Colors
-white = #FFFFFF
-transparency = #00FFFFFF
-semi_opaque = #ab000000
+[bar/main]
+include-file = $~/.config/polybar/colors.ini
+include-file = $~/.config/polybar/fonts.ini
 
-[bar/topbar]
+wm-restack = bspwm
 override-redirect=false
 
 width = 100%
 height = 30
+offset-y = 0
+bottom = false
+fixed-center = true
 
 border-size = 2
 border-color = ${colors.foreground}
 background = ${colors.background}
 foreground = ${colors.foreground}
-
 padding = 5
-
-font-0 = NotoSans-Regular:size=8;2
-font-1 = MaterialIcons:size=10
-font-2 = Termsynu:size=8;-1
-font-3 = FontAwesome:size=10
 
 ; modules-left =
 modules-center = music
 ; modules-right =
 
-[module/music]
-type = custom/script
-exec = ~/.config/polybar/scripts/player-mpris.sh
-interval = 3
-click-left = playerctl previous &
-click-right = playerctl next &
-click-middle = playerctl play-pause &
+[settings]
+screenchange-reload = true
