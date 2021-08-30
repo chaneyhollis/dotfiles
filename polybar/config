@@ -1,8 +1,23 @@
 include-file = $~/.config/polybar/modules.ini
 
+[colors]
+; Pywal XRDB Colors
+background = ${xrdb:color0:#222}
+foreground = ${xrdb:color7:#222}
+highlight = ${xrdb:color15:#222}
+
+; Other Colors
+white = #FFFFFF
+transparent = #00000000
+semi_opaque = #cc000000
+
 [bar/main]
-include-file = $~/.config/polybar/colors.ini
-include-file = $~/.config/polybar/fonts.ini
+
+font-0 = "JetBrainsMono Nerd Font:style=Medium:size=8;2"
+font-1 = "JetBrainsMono Nerd Font:style=Bold:size=8;2"
+font-2 = "JetBrainsMono Nerd Font:size=19;5"
+font-3 = "Material Icons Outlined:9;4"
+font-4 = "Material Icons Round:9;4"
 
 wm-restack = bspwm
 override-redirect=false
